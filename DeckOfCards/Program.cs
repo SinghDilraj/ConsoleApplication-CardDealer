@@ -10,12 +10,50 @@ namespace DeckOfCards
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            DeckOfCards myCards = new DeckOfCards();
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            Console.WriteLine("Welcome To Card-Dealer");
+            Console.WriteLine();
+
+            Console.WriteLine("What Would You Like Me To Do.");
+            Console.WriteLine();
+            Console.WriteLine("Press a Number");
+            Console.WriteLine();
+            Console.WriteLine("[ 1 ] To Shuffle the Cards.");
+            Console.WriteLine("[ 2 ] To Deal one Card from Shuffled Deck of Cards.");
+            Console.WriteLine("[ 3 ] To Deal Whole Shuffled Deck of Cards.");
+            Console.WriteLine("[ 0 ] To Exit.");
+            Console.WriteLine();
+
+            char input = ' ';
+
+            while(input != '0')
+            {
+                input = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+                Console.WriteLine();
+
+                switch (input)
+                {
+                    case '1':
+                        Console.WriteLine("Succesfully Shuffled the Cards.");
+                        Console.WriteLine();
+                        myCards.Shuffle();
+                        break;
+
+                    case '2':
+                        Console.WriteLine("Here is the First Card Of the Shuffled Deck of Cards.");
+                        Console.WriteLine();
+                        myCards.DealACard();
+                        break;
+
+                    case '3':
+                        Console.WriteLine("Here is the Shuffled Deck of Cards.");
+                        Console.WriteLine();
+                        myCards.DealADeck();
+                        break;
+                }
+            }
         }
     }
 }
