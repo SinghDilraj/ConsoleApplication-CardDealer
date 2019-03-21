@@ -8,6 +8,8 @@ namespace DeckOfCards
 {
     class DeckOfCards
     {
+        public int Index { get; set; } = 0;
+
         public List<Card> Cards { get; set; } = new List<Card>();
 
         public DeckOfCards()
@@ -73,20 +75,27 @@ namespace DeckOfCards
 
         public void Shuffle()
         {
+            Index = 0;
+
             Cards = Cards.OrderBy(a => Guid.NewGuid()).ToList();
         }
 
         public void DealACard()
         {
-            Shuffle();
+            if(Index <= 51)
+            {
+                Console.WriteLine(Cards[Index].Name);
 
-            Console.WriteLine(Cards[0].Name);
+                Index++;
+            }
+            else
+            {
+                Console.WriteLine("That Was The Last Card.");
+            }
         }
 
         public void DealADeck() 
         {
-            Shuffle();
-
             foreach (Card card in Cards)
             {
                 Console.WriteLine(card.Name);

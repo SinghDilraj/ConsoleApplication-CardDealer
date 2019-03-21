@@ -42,7 +42,7 @@ namespace DeckOfCards
                         break;
 
                     case '2':
-                        Console.WriteLine("Here is the First Card Of the Shuffled Deck of Cards.");
+                        Console.WriteLine("Here is the next Card from the Shuffled Deck of Cards.");
                         Console.WriteLine();
                         myCards.DealACard();
                         break;
