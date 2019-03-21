@@ -82,7 +82,7 @@ namespace DeckOfCards
 
         public void DealACard()
         {
-            if(Index <= 51)
+            if(Index <= 51 && Index >= 0)
             {
                 Console.WriteLine(Cards[Index].Name);
 
